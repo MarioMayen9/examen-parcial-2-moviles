@@ -30,12 +30,12 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="128dp"
+                android:layout_width="99dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/noimagemovieapp" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="210dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -46,12 +46,22 @@
                     android:layout_height="wrap_content"
                     android:text="name"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/delete_button"
+                android:layout_width="27dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="X"
+                android:textAllCaps="true"
+                android:textColor="#A60404"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

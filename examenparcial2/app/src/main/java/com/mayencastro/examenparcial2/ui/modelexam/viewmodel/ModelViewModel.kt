@@ -19,6 +19,8 @@ class ModelViewModel(private val repository: ModelRepository) : ViewModel() {
 
     fun addModel(model: Model) = repository.addModel(model)
 
+    fun deleteModel (model: Model) = repository.deleteModel(model)
+
 
     fun create(){
         if (!validateData()) {

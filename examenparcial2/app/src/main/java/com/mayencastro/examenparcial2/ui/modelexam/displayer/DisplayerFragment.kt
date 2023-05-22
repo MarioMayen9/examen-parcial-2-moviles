@@ -77,12 +77,17 @@ class DisplayerFragment : Fragment() {
         adapter.setData(viewModel.getModel())
         adapter.notifyDataSetChanged()
     }
+    private fun deleteSelectedModel(deleteModel: Model) {
+        viewModel.deleteModel(deleteModel) // Eliminar el modelo del ViewModel o del repositorio
+        displayModel() // Actualizar la lista de modelos en el RecyclerView
+    }
 
     private fun setupRecyclerView(view: View) {
         binding.recyclerView.layoutManager = LinearLayoutManager(view.context)
-        adapter = ModelRecyclerViewAdapter{
-                selectedModel -> showSelectedItem(selectedModel)
-        }
+        adapter = ModelRecyclerViewAdapter(
+            clickListener = { selectedModel -> showSelectedItem(selectedModel) },
+            deleteListener = { deletedModel -> deleteSelectedModel(deletedModel) }
+        )
 
         Log.d("TAG NameApp", viewModel.name.toString())
 
