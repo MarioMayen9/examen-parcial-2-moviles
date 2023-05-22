@@ -49,6 +49,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+            <EditText
+                android:id="@+id/descripcionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_gap"
+                android:layout_marginTop="@dimen/big_gap"
+                android:layout_marginEnd="@dimen/default_gap"
+                android:text="@={viewmodel.descripcion}"
+                android:hint="descripcion"
+                android:minHeight="48dp"
+                android:padding="@dimen/default_gap"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
+
+
 
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton

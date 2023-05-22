@@ -8,6 +8,7 @@ import com.mayencastro.examenparcial2.databinding.ModelItemBinding
 class ModelRecyclerViewHolder(private val binding: ModelItemBinding): RecyclerView.ViewHolder(binding.root) {
     fun bind(model: Model, clickListener: (Model) -> Unit, deleteListener: (Model) -> Unit) {
         binding.titleTextView.text = model.name
+        binding.descipcionId.text = model.descripcion
 
 
         binding.modelCard.setOnClickListener {

@@ -12,6 +12,9 @@ import com.mayencastro.examenparcial2.repositories.ModelRepository
 class ModelViewModel(private val repository: ModelRepository) : ViewModel() {
 
     var name = MutableLiveData("")
+    var descripcion = MutableLiveData("")
+
+
     var status = MutableLiveData("")
 
 
@@ -30,6 +33,7 @@ class ModelViewModel(private val repository: ModelRepository) : ViewModel() {
 
         val model = Model(
             name.value!!,
+            descripcion.value!!
 
         )
         addModel(model)
@@ -41,6 +45,7 @@ class ModelViewModel(private val repository: ModelRepository) : ViewModel() {
     private fun validateData(): Boolean{
         when{
             name.value.isNullOrEmpty() -> return false
+            descripcion.value.isNullOrEmpty() -> return false
 
         }
         return true
@@ -48,6 +53,7 @@ class ModelViewModel(private val repository: ModelRepository) : ViewModel() {
 
     fun clearData() {
         name.value = ""
+        descripcion.value=""
 
     }
 
@@ -58,6 +64,7 @@ class ModelViewModel(private val repository: ModelRepository) : ViewModel() {
 
     fun setSelectedModel(model:Model){
         name.value= model.name
+        descripcion.value = model.descripcion
 
     }
 
