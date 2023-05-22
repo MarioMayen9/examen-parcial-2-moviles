@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.modelexam.ModelFragment">
 
@@ -10,18 +11,36 @@
             type="com.mayencastro.examenparcial2.ui.modelexam.viewmodel.ModelViewModel" />
     </data>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="189dp"
-            android:layout_height="wrap_content"
-            android:text="@={viewmodel.name}"
-            android:layout_gravity="center"
-            tools:text="FRAGMENT"
-        />
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
 
-    </FrameLayout>
+      <TextView
+          android:layout_width="189dp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="@={viewmodel.name}"
+          app:layout_constraintBottom_toTopOf="@+id/textView3"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.904"
+          tools:text="FRAGMENT" />
 
+      <TextView
+          android:id="@+id/textView3"
+          android:layout_width="189dp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="@={viewmodel.descripcion}"
+
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.452"
+          tools:text="FRAGMENT" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
